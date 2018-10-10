@@ -57190,11 +57190,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     var notification = new Notification('New post alert!', {
                         body: post.title
                     });
+                    notification.onclick = function () {
+                        window.open(window.location.href);
+                    };
                 });
-
-                notification.onclick = function () {
-                    windows.open(window.location.href);
-                };
             });
         }
     }

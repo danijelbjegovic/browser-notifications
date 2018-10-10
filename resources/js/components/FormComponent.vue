@@ -58,11 +58,12 @@
                         let notification = new Notification('New post alert!', {
                             body: post.title
                         })
+                        notification.onclick = () => {
+                            window.open(window.location.href)
+                        }
                     })
 
-                    notification.onclick = () => {
-                        windows.open(window.location.href)
-                    }
+
                 })
             }
         }
