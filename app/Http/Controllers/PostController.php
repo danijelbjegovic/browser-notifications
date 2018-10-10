@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-
+use App\Events\PostCreated;
 class PostController extends Controller
 {
     public function create()
@@ -18,6 +18,7 @@ class PostController extends Controller
         $post->body = $request->get('body');
 
         $post->save();
+        event(new PostCreated($post));
 
         return response($post);
     }
